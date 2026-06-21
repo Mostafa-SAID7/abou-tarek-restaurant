@@ -19,25 +19,13 @@
           ) }}
         </p>
         <div class="hero-stats" role="list" aria-label="Restaurant statistics">
-          <div class="stat" role="listitem">
-            <span class="stat-num">1950s</span>
-            <span class="stat-label">{{ t('التأسيس', 'Founded') }}</span>
-          </div>
-          <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem">
-            <span class="stat-num">4</span>
-            <span class="stat-label">{{ t('طوابق', 'Floors') }}</span>
-          </div>
-          <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem">
-            <span class="stat-num">6+</span>
-            <span class="stat-label">{{ t('فروع', 'Branches') }}</span>
-          </div>
-          <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem">
-            <span class="stat-num">3</span>
-            <span class="stat-label">{{ t('دول', 'Countries') }}</span>
-          </div>
+          <template v-for="(stat, i) in heroStats" :key="stat.value">
+            <div class="stat" role="listitem">
+              <span class="stat-num">{{ stat.value }}</span>
+              <span class="stat-label">{{ t(stat.labelAr, stat.labelEn) }}</span>
+            </div>
+            <div v-if="i < heroStats.length - 1" class="stat-div" aria-hidden="true"></div>
+          </template>
         </div>
         <div class="hero-hotline">
           <AppIcon name="phone" :size="17" color="rgba(255,255,255,.75)" aria-hidden="true" />
@@ -64,29 +52,14 @@
         <p class="section-sub">{{ t('بسيط. مثالي. أسطوري.', 'Simple. Perfect. Legendary.') }}</p>
       </div>
       <div class="menu-grid" role="list">
-        <article class="menu-item featured" role="listitem">
-          <div class="menu-icon" aria-hidden="true">🍲</div>
+        <article v-for="item in menuHighlights" :key="item.id"
+          class="menu-item" :class="{ featured: item.flags.isFeatured }" role="listitem">
+          <div class="menu-icon" aria-hidden="true"><AppIcon :name="item.icon" :size="32" color="var(--primary)" /></div>
           <div class="menu-info">
-            <h3>{{ t('كشري', 'Koshary') }}</h3>
-            <p>{{ t('أرز وعدس ومكرونة مع صلصة الطماطم المتبلة والبصل المقلي والدقة الحارة. نباتي ١٠٠٪.', 'Rice, lentils & pasta layered with spiced tomato sauce, crispy fried onions & tangy daqqah. 100% vegan.') }}</p>
+            <h3>{{ t(item.name.ar, item.name.en) }}</h3>
+            <p>{{ t(item.description.ar, item.description.en) }}</p>
           </div>
-          <div class="menu-price">~65 {{ t('ج.م.', 'EGP') }}</div>
-        </article>
-        <article class="menu-item" role="listitem">
-          <div class="menu-icon" aria-hidden="true">🥣</div>
-          <div class="menu-info">
-            <h3>{{ t('شوربة عدس', 'Lentil Soup') }}</h3>
-            <p>{{ t('شوربة العدس المصرية التقليدية، مطبوخة على نار هادئة حتى الكمال.', 'Traditional Egyptian lentil soup, slow-cooked to perfection.') }}</p>
-          </div>
-          <div class="menu-price">~60 {{ t('ج.م.', 'EGP') }}</div>
-        </article>
-        <article class="menu-item" role="listitem">
-          <div class="menu-icon" aria-hidden="true">🍮</div>
-          <div class="menu-info">
-            <h3>{{ t('رز بلبن', 'Rice Pudding') }}</h3>
-            <p>{{ t('رز بلبن مصري كلاسيكي — الخاتمة المثالية.', 'Classic Egyptian rice pudding — the perfect sweet finish.') }}</p>
-          </div>
-          <div class="menu-price">{{ t('سعر السوق', 'Market price') }}</div>
+          <div class="menu-price">{{ displayPrice(item) }}</div>
         </article>
       </div>
     </section>
@@ -160,7 +133,7 @@
       <!-- Empty: no data -->
       <template v-else-if="store.restaurants.length === 0">
         <div class="empty-state" role="status">
-          <div class="empty-icon" aria-hidden="true">🍲</div>
+          <div class="empty-icon" aria-hidden="true"><AppIcon name="bowl" :size="56" color="var(--border)" /></div>
           <h3>{{ t('لا توجد فروع بعد', 'No branches yet') }}</h3>
           <p>{{ auth.isAuthenticated ? t('أضف أول فرع للبدء.', 'Add the first branch to get started.') : t('لا توجد بيانات فروع حتى الآن.', 'No branch data available yet.') }}</p>
           <router-link v-if="auth.isAuthenticated" to="/add" class="btn btn-primary">
@@ -270,7 +243,7 @@
           <p>{{ t('حذف', 'Remove') }} <strong>{{ deleteTarget.name }}</strong>{{ t('؟ لا يمكن التراجع عن هذا الإجراء.', '? This cannot be undone.') }}</p>
           <div class="modal-actions">
             <button class="btn btn-secondary" @click="deleteTarget = null" autofocus>{{ t('إلغاء', 'Cancel') }}</button>
-            <button class="btn btn-danger" style="background:var(--error);color:#fff" @click="doDelete">
+            <button class="btn btn-danger" @click="doDelete">
               <AppIcon name="trash" :size="14" aria-hidden="true" />
               {{ t('حذف', 'Delete') }}
             </button>
@@ -290,6 +263,8 @@ import AppIcon from '../components/AppIcon.vue'
 import { useBranchStore } from '../stores/restaurantStore'
 import { usePageMeta } from '../composables/usePageMeta'
 import { useLanguage } from '../composables/useLanguage'
+import statsData from '../data/stats.json'
+import menuData from '../data/menu.json'
 
 usePageMeta({
   title: 'All Branches',
@@ -298,6 +273,18 @@ usePageMeta({
 
 const store        = useBranchStore()
 const { isAR, t }  = useLanguage()
+
+const heroStats      = statsData.hero
+const menuHighlights = menuData.slice(0, 3)
+
+function displayPrice(item) {
+  if (item.price === 'market') return t('سعر السوق', 'Market price')
+  if (item.sizes?.length) {
+    const min = Math.min(...item.sizes.map(s => s.price))
+    return `~${min} ${t('ج.م.', 'EGP')}`
+  }
+  return `~${item.price} ${t('ج.م.', 'EGP')}`
+}
 
 onMounted(() => {
   // Branches are automatically loaded from service into the store
@@ -450,14 +437,7 @@ onMounted(() => {
 .pagination { display: flex; align-items: center; justify-content: center; gap: var(--sp-4); margin-top: var(--sp-6); }
 .page-info  { font-size: .9rem; color: var(--text-muted); font-weight: 600; }
 
-.empty-state {
-  text-align: center; padding: var(--sp-12) var(--sp-6);
-  display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);
-  color: var(--text-muted);
-}
-.empty-icon { font-size: 4rem; }
-.empty-state h3 { margin: 0; font-size: 1.2rem; color: var(--text); }
-.empty-state p  { margin: 0; }
+.empty-icon { display: flex; justify-content: center; }
 
 .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 500; padding: var(--sp-4); backdrop-filter: blur(4px); }
 .modal { background: var(--surface); border-radius: var(--r-2xl); padding: var(--sp-8); max-width: 380px; width: 100%; box-shadow: var(--shadow-lg); animation: modalIn .18s ease-out; }

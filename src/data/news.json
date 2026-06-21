@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "icon": "trophy",
+    "tagAr": "إنجاز عالمي",
+    "tagEn": "World Achievement",
+    "color": "linear-gradient(135deg,#1a0a0a,#3d1515)",
+    "featured": true,
+    "titleAr": "كشري أبو طارق يدخل موسوعة جينيس للأرقام القياسية",
+    "titleEn": "Koshary Abou Tarek Enters Guinness World Records",
+    "excerptAr": "حقق كشري أبو طارق رقمًا قياسيًا عالميًا بتحضير أكبر طبق كشري في التاريخ خلال احتفالية وطنية كبرى، ليثبت أن الكشري المصري ليس مجرد أكلة — بل إرث حضاري حقيقي.",
+    "excerptEn": "Koshary Abou Tarek set a world record by preparing the largest koshary dish in history during a grand national celebration, proving that Egyptian koshary is not just a dish — it's a true civilizational heritage.",
+    "date": "2024"
+  },
+  {
+    "id": 2,
+    "icon": "award",
+    "tagAr": "تميّز",
+    "tagEn": "Recognition",
+    "color": "linear-gradient(135deg,#0a1a2a,#153050)",
+    "featured": false,
+    "titleAr": "TasteAtlas تختار كشري أبو طارق ضمن أفضل ١٠٠ مطعم أسطوري في العالم",
+    "titleEn": "TasteAtlas Lists Koshary Abou Tarek Among the World's Top 100 Legendary Restaurants",
+    "excerptAr": "حصد المطعم لقب \"أسطوري\" من موسوعة TasteAtlas ليكون الأول مصريًا وعربيًا في هذه القائمة المرموقة.",
+    "excerptEn": "The restaurant earned the \"Legendary\" title from TasteAtlas, becoming the first Egyptian and Arab entry on this prestigious list.",
+    "date": "2024"
+  },
+  {
+    "id": 3,
+    "icon": "globe",
+    "tagAr": "توسع",
+    "tagEn": "Expansion",
+    "color": "linear-gradient(135deg,#0a1a0a,#153015)",
+    "featured": false,
+    "titleAr": "توسع دولي: افتتاح فرع جديد في المملكة العربية السعودية",
+    "titleEn": "Global Expansion: New Branch Opens in Saudi Arabia",
+    "excerptAr": "يواصل كشري أبو طارق توسعه في منطقة الخليج بافتتاح فرعه الجديد في المملكة.",
+    "excerptEn": "Koshary Abou Tarek continues its Gulf expansion with a new branch in Saudi Arabia.",
+    "date": "2023"
+  },
+  {
+    "id": 4,
+    "icon": "landmark",
+    "tagAr": "تراث",
+    "tagEn": "Heritage",
+    "color": "linear-gradient(135deg,#1a1a0a,#302a15)",
+    "featured": false,
+    "titleAr": "الكشري على قائمة اليونسكو للتراث الثقافي غير المادي",
+    "titleEn": "Koshary Added to UNESCO Intangible Cultural Heritage List",
+    "excerptAr": "أعلنت اليونسكو إدراج الكشري المصري في قائمة التراث الثقافي غير المادي للإنسانية.",
+    "excerptEn": "UNESCO announced the inclusion of Egyptian Koshary on the Intangible Cultural Heritage of Humanity list.",
+    "date": "2023"
+  },
+  {
+    "id": 5,
+    "icon": "tv",
+    "tagAr": "إعلام",
+    "tagEn": "Media",
+    "color": "linear-gradient(135deg,#0a0a1a,#152030)",
+    "featured": false,
+    "titleAr": "كشري أبو طارق في برامج عالمية وتقارير عن المطبخ المصري",
+    "titleEn": "Koshary Abou Tarek Featured in International Shows on Egyptian Cuisine",
+    "excerptAr": "سلّطت برامج دولية الضوء على كشري أبو طارق كسفير للمطبخ المصري الأصيل.",
+    "excerptEn": "International programs highlighted Koshary Abou Tarek as an ambassador of authentic Egyptian cuisine.",
+    "date": "2023"
+  },
+  {
+    "id": 6,
+    "icon": "users",
+    "tagAr": "شراكة",
+    "tagEn": "Partnership",
+    "color": "linear-gradient(135deg,#1a0a1a,#2d1530)",
+    "featured": false,
+    "titleAr": "شراكة استراتيجية لتوسيع التوصيل عبر منصات رقمية",
+    "titleEn": "Strategic Partnership to Expand Delivery via Digital Platforms",
+    "excerptAr": "أطلق كشري أبو طارق شراكات جديدة مع منصات توصيل رائدة لتغطية مناطق أوسع.",
+    "excerptEn": "Koshary Abou Tarek launched new partnerships with leading delivery platforms to cover wider areas.",
+    "date": "2022"
+  },
+  {
+    "id": 7,
+    "icon": "award",
+    "tagAr": "جائزة",
+    "tagEn": "Award",
+    "color": "linear-gradient(135deg,#1a1500,#302800)",
+    "featured": false,
+    "titleAr": "جائزة أفضل مطعم شعبي في مصر لعام ٢٠٢٢",
+    "titleEn": "Best Egyptian Street Food Restaurant Award 2022",
+    "excerptAr": "حصد كشري أبو طارق جائزة أفضل مطعم شعبي في مصر من إحدى أبرز المجلات السياحية.",
+    "excerptEn": "Koshary Abou Tarek won the Best Egyptian Street Food Restaurant award from one of the most prominent tourism magazines.",
+    "date": "2022"
+  }
+]

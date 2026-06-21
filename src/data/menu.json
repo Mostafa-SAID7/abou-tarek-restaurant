@@ -2,10 +2,7 @@
   {
     "id": "koshary-signature",
     "category": "koshary",
-    "name": {
-      "ar": "كشري — الأصلي",
-      "en": "Koshary — Signature"
-    },
+    "name": { "ar": "كشري — الأصلي", "en": "Koshary — Signature" },
     "description": {
       "ar": "الطبق الأسطوري الأصلي: أرز، عدس بني، مكرونة، صلصة طماطم متبلة، بصل مقلي ذهبي، دقة حارة",
       "en": "The iconic original: rice, brown lentils, pasta, spiced tomato sauce, crispy fried onions, tangy daqqah"
@@ -15,31 +12,25 @@
       "en": ["rice", "lentils", "pasta", "tomato sauce", "fried onions", "chickpeas", "daqqah"]
     },
     "sizes": [
-      { "size": "small", "label": { "ar": "صغير", "en": "Small" }, "price": 50 },
-      { "size": "medium", "label": { "ar": "وسط", "en": "Medium" }, "price": 60 },
-      { "size": "large", "label": { "ar": "كبير", "en": "Large" }, "price": 70 },
-      { "size": "jumbo", "label": { "ar": "جامبو", "en": "Jumbo" }, "price": 85 }
+      { "size": "small",  "label": { "ar": "صغير", "en": "Small"  }, "price": 50 },
+      { "size": "medium", "label": { "ar": "وسط",  "en": "Medium" }, "price": 60 },
+      { "size": "large",  "label": { "ar": "كبير", "en": "Large"  }, "price": 70 },
+      { "size": "jumbo",  "label": { "ar": "جامبو","en": "Jumbo"  }, "price": 85 }
     ],
     "dietary": ["vegan", "vegetarian", "gluten-friendly"],
     "customizations": [
-      { "id": "extra-sauce", "label": { "ar": "صلصة إضافية", "en": "Extra sauce" } },
-      { "id": "extra-onions", "label": { "ar": "بصل إضافي", "en": "Extra onions" } },
-      { "id": "extra-daqqah", "label": { "ar": "دقة إضافية", "en": "Extra daqqah" } }
+      { "id": "extra-sauce",  "label": { "ar": "صلصة إضافية", "en": "Extra sauce"  } },
+      { "id": "extra-onions", "label": { "ar": "بصل إضافي",   "en": "Extra onions" } },
+      { "id": "extra-daqqah", "label": { "ar": "دقة إضافية",  "en": "Extra daqqah" } }
     ],
-    "image": "🍲",
-    "flags": {
-      "isFeatured": true,
-      "isAvailable": true,
-      "isVegan": true
-    }
+    "image": "/branch1.png",
+    "icon": "bowl",
+    "flags": { "isFeatured": true, "isAvailable": true, "isVegan": true }
   },
   {
     "id": "lentil-soup",
     "category": "soups",
-    "name": {
-      "ar": "شوربة عدس",
-      "en": "Lentil Soup"
-    },
+    "name": { "ar": "شوربة عدس", "en": "Lentil Soup" },
     "description": {
       "ar": "شوربة عدس مصرية كلاسيكية ناعمة الملمس، مطبوخة على نار هادئة بالتوابل والليمون",
       "en": "Velvety smooth Egyptian lentil soup seasoned with cumin & lemon. A perfect warm-up before your koshary."
@@ -50,23 +41,17 @@
     },
     "price": 60,
     "dietary": ["vegan", "vegetarian"],
-    "image": "🥣",
-    "flags": {
-      "isFeatured": false,
-      "isAvailable": true,
-      "isVegan": true
-    }
+    "image": "/branch2.png",
+    "icon": "soup",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
   },
   {
     "id": "rice-pudding",
     "category": "desserts",
-    "name": {
-      "ar": "أرز باللبن",
-      "en": "Rice Pudding"
-    },
+    "name": { "ar": "أرز باللبن", "en": "Rice Pudding" },
     "description": {
       "ar": "كريمة الرز المصري الكلاسيكي — الحلوى المثالية لإنهاء وجبتك",
-      "en": "Classic Om Ali–style Egyptian rice pudding. Warm, creamy & mildly sweet — the perfect complement to spicy koshary."
+      "en": "Classic Egyptian rice pudding. Warm, creamy & mildly sweet — the perfect complement to spicy koshary."
     },
     "ingredients": {
       "ar": ["أرز", "لبن", "سكر", "فانيليا", "قرفة"],
@@ -74,20 +59,14 @@
     },
     "price": "market",
     "dietary": ["vegetarian"],
-    "image": "🍮",
-    "flags": {
-      "isFeatured": false,
-      "isAvailable": true,
-      "isVegan": false
-    }
+    "image": "/branch2.png",
+    "icon": "cake",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": false }
   },
   {
     "id": "soft-drinks",
     "category": "drinks",
-    "name": {
-      "ar": "مشروبات غازية",
-      "en": "Soft Drinks"
-    },
+    "name": { "ar": "مشروبات غازية", "en": "Soft Drinks" },
     "description": {
       "ar": "بيبسي، 7 أب، ميرندا وماء متوفرة في جميع الفروع",
       "en": "Pepsi, 7Up, Mirinda & water available at all branches."
@@ -98,31 +77,92 @@
     },
     "price": "market",
     "dietary": [],
-    "image": "🥤",
-    "flags": {
-      "isFeatured": false,
-      "isAvailable": true,
-      "isVegan": true
-    }
+    "image": "/placeholder.png",
+    "icon": "cup",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
   },
   {
     "id": "water",
     "category": "drinks",
-    "name": {
-      "ar": "مياه",
-      "en": "Water"
-    },
+    "name": { "ar": "مياه", "en": "Water" },
     "description": {
       "ar": "مياه عذبة بأحجام مختلفة",
       "en": "Still water in various bottle sizes."
     },
-    "image": "💧",
     "price": "market",
     "dietary": ["vegan"],
-    "flags": {
-      "isFeatured": false,
-      "isAvailable": true,
-      "isVegan": true
-    }
+    "image": "/placeholder.png",
+    "icon": "droplet",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
+  },
+  {
+    "id": "extra-sauce",
+    "category": "extras",
+    "name": { "ar": "صلصة إضافية", "en": "Extra Tomato Sauce" },
+    "description": {
+      "ar": "صلصة طماطم متبلة إضافية لطبقك",
+      "en": "Extra portion of our spiced tomato sauce."
+    },
+    "price": 5,
+    "dietary": ["vegan"],
+    "image": "/placeholder.png",
+    "icon": "droplet",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
+  },
+  {
+    "id": "extra-onions",
+    "category": "extras",
+    "name": { "ar": "بصل مقلي إضافي", "en": "Extra Crispy Onions" },
+    "description": {
+      "ar": "بصل مقلي ذهبي ومقرمش — إضافة لا مثيل لها",
+      "en": "Golden crispy fried onions — the crowning touch of any koshary."
+    },
+    "price": 5,
+    "dietary": ["vegan"],
+    "image": "/placeholder.png",
+    "icon": "flame",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
+  },
+  {
+    "id": "extra-daqqah",
+    "category": "extras",
+    "name": { "ar": "دقة إضافية", "en": "Extra Daqqah" },
+    "description": {
+      "ar": "الصلصة السرية — خل الثوم الحامض لمن يحبون الطعم القوي",
+      "en": "The secret sauce — extra tangy garlic vinegar for those who like it bold."
+    },
+    "price": 5,
+    "dietary": ["vegan"],
+    "image": "/placeholder.png",
+    "icon": "jar",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
+  },
+  {
+    "id": "extra-chickpeas",
+    "category": "extras",
+    "name": { "ar": "حمص إضافي", "en": "Extra Chickpeas" },
+    "description": {
+      "ar": "حمص مطبوخ جيدًا لإضافة مزيد من البروتين والنكهة",
+      "en": "Well-cooked chickpeas for extra protein and flavour."
+    },
+    "price": 5,
+    "dietary": ["vegan"],
+    "image": "/placeholder.png",
+    "icon": "salad",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
+  },
+  {
+    "id": "bread",
+    "category": "extras",
+    "name": { "ar": "خبز", "en": "Bread" },
+    "description": {
+      "ar": "خبز بلدي طازج",
+      "en": "Fresh Egyptian baladi bread."
+    },
+    "price": 5,
+    "dietary": ["vegan", "vegetarian"],
+    "image": "/placeholder.png",
+    "icon": "slice",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
   }
 ]

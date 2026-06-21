@@ -1,6 +1,6 @@
 <template>
   <DefaultLayout>
-    <section class="page-hero" aria-label="Contact">
+    <section class="page-hero" :style="{ backgroundImage: 'url(/branch1.png)' }" aria-label="Contact">
       <div class="page-hero-inner">
         <span class="page-eyebrow">{{ t('كشري أبو طارق', 'Koshary Abou Tarek') }}</span>
         <h1 class="page-hero-title">{{ t('تواصل معنا', 'Contact Us') }}</h1>
@@ -9,12 +9,12 @@
     </section>
 
     <div class="contact-body">
-      <div class="contact-inner">
+      <div class="content-inner contact-inner">
 
         <!-- Quick cards -->
         <div class="contact-cards">
           <a href="tel:16011" class="contact-card phone-card">
-            <div class="cc-icon">📞</div>
+            <div class="cc-icon"><AppIcon name="phone" :size="24" color="currentColor" aria-hidden="true" /></div>
             <div class="cc-text">
               <span class="cc-label">{{ t('خط التوصيل', 'Delivery Hotline') }}</span>
               <span class="cc-value">16011</span>
@@ -22,14 +22,14 @@
             </div>
           </a>
           <a href="https://www.instagram.com/koshariabotarek" target="_blank" rel="noopener" class="contact-card social-card">
-            <div class="cc-icon">📸</div>
+            <div class="cc-icon"><AppIcon name="camera" :size="24" color="currentColor" aria-hidden="true" /></div>
             <div class="cc-text">
               <span class="cc-label">Instagram</span>
               <span class="cc-value">@koshariabotarek</span>
             </div>
           </a>
           <a href="https://www.facebook.com/kosharyabotarek" target="_blank" rel="noopener" class="contact-card social-card">
-            <div class="cc-icon">👥</div>
+            <div class="cc-icon"><AppIcon name="users" :size="24" color="currentColor" aria-hidden="true" /></div>
             <div class="cc-text">
               <span class="cc-label">Facebook</span>
               <span class="cc-value">@kosharyabotarek</span>
@@ -44,26 +44,28 @@
           <div class="contact-location">
             <h2>{{ t('الفرع الرئيسي', 'Main Branch') }}</h2>
             <div class="location-map-placeholder">
-              <div class="map-pin-anim" aria-hidden="true">📍</div>
+              <div class="map-pin-anim" aria-hidden="true">
+                <AppIcon name="map-pin" :size="40" color="var(--primary)" aria-hidden="true" />
+              </div>
               <p>{{ t('١٦ شارع معروف، تقاطع شارع شامبليون، وسط القاهرة، مصر', '16 Maarouf St., Champollion St. Intersection, Downtown Cairo, Egypt') }}</p>
             </div>
             <div class="location-details">
               <div class="loc-detail">
-                <span class="loc-icon">🕐</span>
+                <span class="loc-icon"><AppIcon name="clock" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
                   <strong>{{ t('ساعات العمل', 'Opening Hours') }}</strong>
                   <p>{{ t('يومياً من ٧ صباحًا حتى منتصف الليل', 'Daily from 7 AM to midnight') }}</p>
                 </div>
               </div>
               <div class="loc-detail">
-                <span class="loc-icon">🛵</span>
+                <span class="loc-icon"><AppIcon name="truck" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
                   <strong>{{ t('التوصيل', 'Delivery') }}</strong>
                   <p>{{ t('يومياً ٧ ص – ١٠ م عبر خط ١٦٠١١', 'Daily 7 AM – 10 PM via hotline 16011') }}</p>
                 </div>
               </div>
               <div class="loc-detail">
-                <span class="loc-icon">🌍</span>
+                <span class="loc-icon"><AppIcon name="globe" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
                   <strong>{{ t('فروعنا', 'Our Branches') }}</strong>
                   <p>{{ t('مصر • الإمارات • المملكة العربية السعودية', 'Egypt • UAE • Saudi Arabia') }}</p>
@@ -94,7 +96,10 @@
               </div>
               <button type="submit" class="btn btn-primary btn-full" :disabled="submitted">
                 <span v-if="!submitted">{{ t('إرسال الرسالة', 'Send Message') }}</span>
-                <span v-else>{{ t('✅ تم الإرسال بنجاح!', '✅ Sent Successfully!') }}</span>
+                <span v-else class="success-text">
+                  <AppIcon name="check-circle" :size="16" aria-hidden="true" />
+                  {{ t('تم الإرسال بنجاح!', 'Sent Successfully!') }}
+                </span>
               </button>
             </form>
           </div>
@@ -119,6 +124,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
+import AppIcon from '../components/AppIcon.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
 
@@ -138,15 +144,18 @@ function submitForm() {
 </script>
 
 <style scoped>
-.page-hero { background:var(--hero-gradient); padding:var(--sp-12) var(--sp-8); text-align:center; position:relative; overflow:hidden; }
-.page-hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/svg%3E"); }
-.page-hero-inner { position:relative; z-index:1; }
-.page-eyebrow { font-size:.8rem; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.1em; display:block; margin-bottom:var(--sp-2); }
-.page-hero-title { font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:#fff; margin:0 0 var(--sp-3); font-family:'Cairo',sans-serif; }
-.page-hero-sub { font-size:1rem; color:rgba(255,255,255,.72); margin:0; }
-
-.contact-body { background:var(--bg); }
-.contact-inner { max-width:1100px; margin:0 auto; padding:var(--sp-10) var(--sp-8); display:flex; flex-direction:column; gap:var(--sp-8); }
+.page-hero {
+  position: relative; overflow: hidden;
+  background-size: cover; background-position: center 30%;
+  min-height: 280px; display: flex; align-items: center; justify-content: center;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(15,4,4,.72) 0%, rgba(20,6,6,.88) 100%);
+}
+.page-hero-inner { position: relative; z-index: 1; }
+.contact-body { background: var(--bg); }
+.contact-inner { display: flex; flex-direction: column; gap: var(--sp-8); }
 
 /* Quick cards */
 .contact-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-4); }
@@ -189,10 +198,6 @@ function submitForm() {
 /* Form */
 .contact-form-wrap h2 { font-size:1.2rem; font-weight:900; color:var(--text); margin:0 0 var(--sp-5); }
 .contact-form { display:flex; flex-direction:column; gap:var(--sp-4); }
-.form-field { display:flex; flex-direction:column; gap:var(--sp-2); }
-.form-label { font-size:.85rem; font-weight:600; color:var(--text); }
-.form-input { padding:11px var(--sp-4); border:1.5px solid var(--border); border-radius:var(--r-lg); background:var(--surface); color:var(--text); font-size:.9rem; font-family:inherit; transition:border-color .15s,box-shadow .15s; }
-.form-input:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px var(--primary-shadow); }
 .form-textarea { resize:vertical; min-height:110px; }
 
 /* Social */
@@ -203,5 +208,4 @@ function submitForm() {
 .social-link:hover { border-color:var(--primary); color:var(--primary); background:var(--primary-light); }
 
 @media(max-width:860px){ .contact-cards{grid-template-columns:1fr} .contact-grid{grid-template-columns:1fr} }
-@media(max-width:640px){ .contact-inner{padding:var(--sp-6) var(--sp-4)} }
 </style>

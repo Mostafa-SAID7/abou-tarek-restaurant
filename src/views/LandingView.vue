@@ -64,41 +64,34 @@
       <img src="/separator.png" alt="" class="separator-mobile-img" />
     </div>
 
-    <!-- ══ FEATURED NEWS 1 — text start / image end ══ -->
+    <!-- ══ FEATURED NEWS — driven by featured.json ══ -->
     <div class="featured-news-wrap">
-      <article class="featured-article featured-article-1">
-        <div class="featured-text">
-          <h2 class="featured-title">{{ t(
-            'كشري أبو طارق يدخل موسوعة جينيس بأكبر طبق كشري في العالم',
-            'Koshary Abou Tarek Enters Guinness with the World\'s Largest Koshary Dish'
-          ) }}</h2>
-          <p class="featured-desc">{{ t(
-            'حقق كشري أبو طارق رقمًا قياسيًا في موسوعة غينيس للأرقام القياسية بتحضير أكبر طبق كشري في التاريخ، في احتفالية وطنية كبرى جمعت آلاف المصريين.',
-            'Koshary Abou Tarek set a Guinness World Record by preparing the largest koshary dish in history, in a grand national celebration that brought together thousands of Egyptians.'
-          ) }}</p>
-          <router-link to="/news" class="featured-btn">{{ t('اقرأ أكثر', 'Read More') }}</router-link>
-        </div>
-        <div class="featured-image">
-          <img src="/branch1.png" alt="" class="featured-img" />
-        </div>
-      </article>
-
-      <!-- ══ FEATURED NEWS 2 — image start / text end ══ -->
-      <article class="featured-article featured-article-2">
-        <div class="featured-image">
-          <img src="/branch1.png" alt="" class="featured-img" />
-        </div>
-        <div class="featured-text">
-          <h2 class="featured-title">{{ t(
-            'TasteAtlas تختار كشري أبو طارق ضمن أفضل ١٠٠ مطعم أسطوري',
-            'TasteAtlas Names Koshary Abou Tarek Among Top 100 Legendary Restaurants'
-          ) }}</h2>
-          <p class="featured-desc">{{ t(
-            'حصد المطعم الأسطوري لقب "مطعم أسطوري" من موقع TasteAtlas الشهير للمطاعم والأكلات الشعبية، ليكون الأول مصريًا وعربيًا في هذه القائمة المرموقة.',
-            'The legendary restaurant earned the "Legendary Restaurant" title from TasteAtlas, the renowned food and travel guide, becoming the first Egyptian and Arab entry on this prestigious list.'
-          ) }}</p>
-          <router-link to="/news" class="featured-btn">{{ t('اقرأ أكثر', 'Read More') }}</router-link>
-        </div>
+      <article
+        v-for="(article, idx) in featuredArticles"
+        :key="article.id"
+        class="featured-article"
+        :class="`featured-article-${article.id}`"
+      >
+        <template v-if="idx % 2 === 0">
+          <div class="featured-text">
+            <h2 class="featured-title">{{ isAR ? article.titleAr : article.titleEn }}</h2>
+            <p class="featured-desc">{{ isAR ? article.descAr : article.descEn }}</p>
+            <router-link :to="article.link" class="featured-btn">{{ t('اقرأ أكثر', 'Read More') }}</router-link>
+          </div>
+          <div class="featured-image">
+            <img :src="article.image" alt="" class="featured-img" />
+          </div>
+        </template>
+        <template v-else>
+          <div class="featured-image">
+            <img :src="article.image" alt="" class="featured-img" />
+          </div>
+          <div class="featured-text">
+            <h2 class="featured-title">{{ isAR ? article.titleAr : article.titleEn }}</h2>
+            <p class="featured-desc">{{ isAR ? article.descAr : article.descEn }}</p>
+            <router-link :to="article.link" class="featured-btn">{{ t('اقرأ أكثر', 'Read More') }}</router-link>
+          </div>
+        </template>
       </article>
     </div>
 
@@ -113,7 +106,7 @@
           <article v-for="article in newsItems" :key="article.id" class="news-card">
             <div class="news-card-thumb">
               <div class="news-card-thumb-inner" :style="{ background: article.color }">
-                <span class="news-card-emoji">{{ article.emoji }}</span>
+                <AppIcon :name="article.icon" :size="28" color="rgba(255,255,255,.85)" aria-hidden="true" />
               </div>
             </div>
             <div class="news-card-body">
@@ -124,7 +117,7 @@
                   <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#1D1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <p class="news-card-desc">{{ t(article.descAr, article.descEn) }}</p>
+              <p class="news-card-desc">{{ t(article.excerptAr, article.excerptEn) }}</p>
             </div>
           </article>
         </div>
@@ -153,25 +146,13 @@
     <!-- ══ STATS ══ -->
     <section class="stats-section">
       <div class="stats-inner">
-        <div class="stat-item">
-          <span class="stat-num">70+</span>
-          <span class="stat-lbl">{{ t('عامًا من الخبرة', 'Years of Excellence') }}</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">6+</span>
-          <span class="stat-lbl">{{ t('فروع في 3 دول', 'Branches in 3 Countries') }}</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">4</span>
-          <span class="stat-lbl">{{ t('طوابق في وسط البلد', 'Floors Downtown Cairo') }}</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">🏆</span>
-          <span class="stat-lbl">{{ t('سجل غينيس', 'Guinness World Record') }}</span>
-        </div>
+        <template v-for="(stat, i) in landingStats" :key="stat.value">
+          <div class="stat-item">
+            <span class="stat-num">{{ stat.value }}</span>
+            <span class="stat-lbl">{{ t(stat.labelAr, stat.labelEn) }}</span>
+          </div>
+          <div v-if="i < landingStats.length - 1" class="stat-divider" aria-hidden="true"></div>
+        </template>
       </div>
     </section>
 
@@ -215,8 +196,13 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
+import AppIcon from '../components/AppIcon.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
+import allNewsData from '../data/news.json'
+import reviewsData from '../data/reviews.json'
+import statsData from '../data/stats.json'
+import featuredArticles from '../data/featured.json'
 
 const { t, isAR } = useLanguage()
 usePageMeta({ title: 'إمبراطورية أبو طارق', description: 'Koshary Abou Tarek — Egypt\'s legendary koshary since the 1950s' })
@@ -224,62 +210,9 @@ usePageMeta({ title: 'إمبراطورية أبو طارق', description: 'Kosha
 const heroVisible = ref(false)
 onMounted(() => setTimeout(() => { heroVisible.value = true }, 80))
 
-const newsItems = [
-  {
-    id: 1, emoji: '🏆', color: 'linear-gradient(135deg,#1a0a0a,#3d1515)',
-    titleAr: 'كشري أبو طارق يدخل موسوعة جينيس',
-    titleEn: 'Koshary Abou Tarek Enters Guinness World Records',
-    descAr: 'رقم قياسي عالمي بأكبر طبق كشري في التاريخ في احتفالية وطنية كبرى.',
-    descEn: 'A world record for the largest koshary dish in history at a grand national celebration.'
-  },
-  {
-    id: 2, emoji: '⭐', color: 'linear-gradient(135deg,#0a1a2a,#153050)',
-    titleAr: 'TasteAtlas: أفضل ١٠٠ مطعم أسطوري في العالم',
-    titleEn: 'TasteAtlas: Top 100 Legendary Restaurants',
-    descAr: 'المطعم الأول عربيًا ومصريًا يحصل على لقب "مطعم أسطوري" من TasteAtlas.',
-    descEn: 'The first Egyptian and Arab restaurant to earn the "Legendary" title from TasteAtlas.'
-  },
-  {
-    id: 3, emoji: '🌍', color: 'linear-gradient(135deg,#0a1a0a,#153015)',
-    titleAr: 'توسع دولي: فروع في الإمارات والسعودية',
-    titleEn: 'Global Expansion: Branches in UAE & Saudi Arabia',
-    descAr: 'يواصل كشري أبو طارق توسعه الدولي بفروع جديدة في دول الخليج العربي.',
-    descEn: 'Koshary Abou Tarek continues its international expansion with new branches across the Gulf.'
-  }
-]
-
-const reviews = [
-  {
-    textAr: 'تجربة لا تُنسى! الكشري هنا له طعم مختلف تمامًا عن أي مكان آخر. المكان نظيف والخدمة سريعة والأسعار معقولة جدًا.',
-    textEn: 'An unforgettable experience! The koshary here has a completely different taste from anywhere else. Clean place, fast service, and very reasonable prices.',
-    name: 'أحمد محمد', nameEn: 'Ahmed Mohamed', rating: 5,
-    roleAr: 'عميل منتظم', roleEn: 'Regular Customer'
-  },
-  {
-    textAr: 'زرت المطعم لأول مرة في رحلتي إلى القاهرة ووجدته في قائمة أفضل مطاعم مصر. والله يستاهل كل كلمة مدح!',
-    textEn: 'I visited the restaurant for the first time on my trip to Cairo after finding it on Egypt\'s best restaurants list. It truly deserves every word of praise!',
-    name: 'سارة خالد', rating: 5,
-    roleAr: 'زائرة من الكويت', roleEn: 'Visitor from Kuwait'
-  },
-  {
-    textAr: 'أكلت الكشري في أماكن كثيرة لكن أبو طارق له مذاق خاص. الصلصة والدقة مختلفة. شكرًا على الاستقبال الجميل دائمًا.',
-    textEn: 'I\'ve had koshary in many places but Abou Tarek has a special flavor. The sauce and precision are different. Thank you for the wonderful reception always.',
-    name: 'محمد علي', rating: 5,
-    roleAr: 'من القاهرة', roleEn: 'From Cairo'
-  },
-  {
-    textAr: 'المطعم ذو التاريخ العريق يحافظ على جودته منذ سنوات. الكشري هنا هو الأصل والباقي تقليد.',
-    textEn: 'This historic restaurant has maintained its quality for years. The koshary here is the original, everything else is an imitation.',
-    name: 'فاطمة إبراهيم', rating: 5,
-    roleAr: 'من الإسكندرية', roleEn: 'From Alexandria'
-  },
-  {
-    textAr: 'تجربة رائعة في مطعم بتاريخ أكثر من 70 سنة. استحق كل لحظة انتظار. سأعود قريبًا بالتأكيد!',
-    textEn: 'An amazing experience at a restaurant with over 70 years of history. Worth every moment of waiting. I will definitely be back soon!',
-    name: 'Omar Hassan', rating: 5,
-    roleAr: 'زائر من الخارج', roleEn: 'International Visitor'
-  }
-]
+const newsItems = allNewsData.slice(0, 3)
+const reviews   = reviewsData
+const landingStats = statsData.landing
 
 const reviewIndex = ref(0)
 const cardWidth = 360 + 16
@@ -507,7 +440,6 @@ html[dir="rtl"] .featured-article-2 { flex-direction: row; }
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
 }
-.news-card-emoji { font-size: 3.5rem; }
 .news-card-body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .news-card-top { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
 .news-card-title { font-size: 1.1rem; font-weight: 800; color: #1D1B1B; font-family: 'Poppins', 'Cairo', sans-serif; line-height: 1.3; width: 80%; }

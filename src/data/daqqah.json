@@ -1,0 +1,12 @@
+{
+  "titleAr": "الدقة الأسطورية",
+  "titleEn": "The Legendary Daqqah",
+  "descAr": "السلاح السري لأبو طارق — صلصة خل حامضة بالثوم مصنوعة من الخل الأبيض المقطر والثوم والماء والكمون والكزبرة. تُضاف على الطاولة حسب الرغبة. اطلب \"دقة في صحن\" للتحكم في الكمية.",
+  "descEn": "Abou Tarek's secret weapon — a tangy, garlicky vinegar sauce made with distilled white vinegar, garlic, water, cumin & coriander. Applied at the table to taste. Ask for daqqa fi sahn (on the side) to control your pour.",
+  "levels": [
+    { "labelAr": "بدون",    "labelEn": "Without",  "cls": "level-0" },
+    { "labelAr": "عادي",    "labelEn": "Regular",  "cls": "level-1" },
+    { "labelAr": "زيادة",   "labelEn": "Extra",    "cls": "level-2" },
+    { "labelAr": "حار جداً","labelEn": "Very Hot", "cls": "level-3" }
+  ]
+}

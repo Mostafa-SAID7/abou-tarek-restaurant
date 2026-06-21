@@ -26,7 +26,7 @@
         "desc": { "ar": "في قلب وسط البلد", "en": "in Heart of Downtown Cairo" }
       },
       {
-        "title": { "ar": "🏆 جينيس", "en": "🏆 Guinness" },
+        "title": { "ar": "جينيس", "en": "Guinness" },
         "desc": { "ar": "سجل عالمي", "en": "World Record" }
       }
     ]
@@ -85,7 +85,7 @@
       },
       {
         "level": 3,
-        "label": { "ar": "🔥 حار جداً", "en": "🔥 Very Hot" },
+        "label": { "ar": "حار جداً", "en": "Very Hot" },
         "desc": { "ar": "للمحترفين فقط!", "en": "For experts only!" }
       }
     ],

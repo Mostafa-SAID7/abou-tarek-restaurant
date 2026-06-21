@@ -6,7 +6,9 @@
         <div class="steam steam1"></div>
         <div class="steam steam2"></div>
         <div class="steam steam3"></div>
-        <div class="bowl-emoji">🍲</div>
+        <div class="bowl-icon">
+          <AppIcon name="bowl" :size="96" color="var(--primary)" aria-hidden="true" />
+        </div>
       </div>
 
       <div class="notfound-code">
@@ -18,8 +20,8 @@
       <h1 class="notfound-title">{{ t('الصفحة غير موجودة', 'Page Not Found') }}</h1>
       <p class="notfound-sub">
         {{ t(
-          'يبدو أن هذه الصفحة ذهبت تأكل كشري ولم تعد! 🍲',
-          'Looks like this page went out for koshary and never came back! 🍲'
+          'يبدو أن هذه الصفحة ذهبت تأكل كشري ولم تعد!',
+          'Looks like this page went out for koshary and never came back!'
         ) }}
       </p>
 
@@ -36,7 +38,10 @@
 
       <!-- Floating particles -->
       <div class="particles" aria-hidden="true">
-        <span v-for="i in 8" :key="i" class="particle" :style="particleStyle(i)">🍲</span>
+        <span v-for="(p, i) in particles" :key="i" class="particle"
+          :style="{ left: p.left, top: p.top, animationDelay: p.delay, animationDuration: p.dur, opacity: p.opacity }">
+          <AppIcon name="bowl" :size="p.size" color="var(--primary)" aria-hidden="true" />
+        </span>
       </div>
     </div>
   </DefaultLayout>
@@ -46,27 +51,9 @@
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import AppIcon from '../components/AppIcon.vue'
 import { useLanguage } from '../composables/useLanguage'
+import particles from '../data/particles.json'
 
 const { t } = useLanguage()
-
-function particleStyle(i) {
-  const positions = [
-    { left: '5%',  top: '20%', delay: '0s',   dur: '4s',  size: '1.2rem', opacity: 0.15 },
-    { left: '85%', top: '15%', delay: '0.8s',  dur: '5s',  size: '1.8rem', opacity: 0.1  },
-    { left: '12%', top: '70%', delay: '1.5s',  dur: '3.5s',size: '1rem',   opacity: 0.12 },
-    { left: '90%', top: '65%', delay: '0.3s',  dur: '4.5s',size: '1.5rem', opacity: 0.08 },
-    { left: '45%', top: '8%',  delay: '2s',    dur: '6s',  size: '1.3rem', opacity: 0.1  },
-    { left: '70%', top: '80%', delay: '1s',    dur: '4s',  size: '0.9rem', opacity: 0.13 },
-    { left: '25%', top: '88%', delay: '2.5s',  dur: '5.5s',size: '1.6rem', opacity: 0.09 },
-    { left: '60%', top: '5%',  delay: '0.5s',  dur: '3.8s',size: '1.1rem', opacity: 0.11 },
-  ]
-  const p = positions[i - 1]
-  return {
-    left: p.left, top: p.top,
-    animationDelay: p.delay, animationDuration: p.dur,
-    fontSize: p.size, opacity: p.opacity
-  }
-}
 </script>
 
 <style scoped>
@@ -83,8 +70,8 @@ function particleStyle(i) {
   position: relative; margin-bottom: var(--sp-4);
   animation: bowlFloat 3s ease-in-out infinite;
 }
-.bowl-emoji {
-  font-size: 6rem; display: block;
+.bowl-icon {
+  display: block;
   filter: drop-shadow(0 8px 24px rgba(200,16,46,.3));
   animation: bowlSpin 8s linear infinite;
 }

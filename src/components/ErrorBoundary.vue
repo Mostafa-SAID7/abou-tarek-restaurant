@@ -2,7 +2,7 @@
   <slot v-if="!hasError" />
   <div v-else class="error-boundary">
     <div class="eb-card">
-      <div class="eb-icon" aria-hidden="true">⚠️</div>
+      <div class="eb-icon" aria-hidden="true"><AppIcon name="alert-circle" :size="56" color="var(--error)" /></div>
       <h2 class="eb-title">{{ t('حدث خطأ ما', 'Something went wrong') }}</h2>
       <p class="eb-sub">{{ t('نعتذر عن هذا الخطأ. يرجى المحاولة مرة أخرى.', 'We\'re sorry about this. Please try again.') }}</p>
       <details v-if="errorMessage" class="eb-details">
@@ -66,7 +66,7 @@ function reset() {
   from { opacity: 0; transform: scale(.96) translateY(-8px); }
   to   { opacity: 1; transform: none; }
 }
-.eb-icon { font-size: 3.5rem; margin-bottom: var(--sp-4); display: block; }
+.eb-icon { margin-bottom: var(--sp-4); display: flex; justify-content: center; }
 .eb-title { font-size: 1.35rem; font-weight: 800; color: var(--text); margin: 0 0 var(--sp-2); }
 .eb-sub   { font-size: .9rem; color: var(--text-muted); margin: 0 0 var(--sp-6); line-height: 1.6; }
 .eb-details { text-align: start; margin-bottom: var(--sp-6); }

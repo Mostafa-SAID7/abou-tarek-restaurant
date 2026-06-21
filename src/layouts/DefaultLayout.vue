@@ -38,7 +38,7 @@
           <a href="tel:16011" class="navbar-phone" aria-label="Hotline 16011">
             <!-- Phone SVG matching official site -->
             <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
-              class="phone-svg" :style="isAR ? 'transform:scaleX(-1)' : ''">
+              class="phone-svg" :class="{ '-scale-x-100': isAR }">
               <path d="M25.49 31.75C24.12 31.75 22.19 31.25 19.3 29.64C15.79 27.67 13.08 25.85 9.59 22.37C6.22 19.01 4.58 16.83 2.29 12.66C-.3 7.95.14 5.48.63 4.42C1.22 3.16 2.09 2.41 3.21 1.66C3.85 1.24 4.52.88 5.22.59C5.29.56 5.36.53 5.42.5C5.77.35 6.29.11 6.96.36C7.41.53 7.81.87 8.43 1.49C9.71 2.75 11.45 5.55 12.1 6.93C12.53 7.86 12.82 8.47 12.82 9.16C12.82 9.97 12.41 10.59 11.92 11.26C11.83 11.38 11.74 11.5 11.65 11.62C11.11 12.32 11 12.53 11.07 12.89C11.23 13.62 12.4 15.79 14.32 17.71C16.24 19.62 18.35 20.72 19.08 20.87C19.46 20.96 19.67 20.83 20.39 20.28C20.5 20.2 20.6 20.12 20.72 20.04C21.46 19.48 22.06 19.08 22.84 19.08H22.85C23.53 19.08 24.12 19.38 25.09 19.87C26.35 20.51 29.24 22.23 30.51 23.51C31.13 24.13 31.47 24.53 31.64 24.97C31.89 25.64 31.65 26.17 31.5 26.52C31.47 26.58 31.44 26.64 31.41 26.71C31.12 27.41 30.76 28.09 30.34 28.72C29.59 29.84 28.83 30.71 27.57 31.3C26.92 31.6 26.21 31.76 25.49 31.75Z" fill="#FEFEFE"/>
             </svg>
             <span class="phone-num">16011</span>
@@ -73,11 +73,11 @@
           <div class="footer-col">
             <h3 class="footer-col-title">{{ t('أصناف', 'Menu') }}</h3>
             <ul class="footer-col-links">
-              <li><router-link to="/menu" class="footer-link">{{ t('كشري', 'Koshary') }}</router-link></li>
-              <li><router-link to="/menu" class="footer-link">{{ t('شوربة', 'Soup') }}</router-link></li>
-              <li><router-link to="/menu" class="footer-link">{{ t('حلويات', 'Desserts') }}</router-link></li>
-              <li><router-link to="/menu" class="footer-link">{{ t('مشروبات', 'Drinks') }}</router-link></li>
-              <li><router-link to="/menu" class="footer-link">{{ t('إضافات', 'Add-ons') }}</router-link></li>
+              <li><router-link to="/menu#koshary" class="footer-link">{{ t('كشري', 'Koshary') }}</router-link></li>
+              <li><router-link to="/menu#soups" class="footer-link">{{ t('شوربة', 'Soup') }}</router-link></li>
+              <li><router-link to="/menu#desserts" class="footer-link">{{ t('حلويات', 'Desserts') }}</router-link></li>
+              <li><router-link to="/menu#drinks" class="footer-link">{{ t('مشروبات', 'Drinks') }}</router-link></li>
+              <li><router-link to="/menu#extras" class="footer-link">{{ t('إضافات', 'Add-ons') }}</router-link></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -105,15 +105,15 @@
               </a>
             </div>
             <div class="footer-hotline">
-              <a href="tel:16011" class="hotline-link">📞 <strong>16011</strong></a>
+              <a href="tel:16011" class="hotline-link"><AppIcon name="phone" :size="14" aria-hidden="true" /> <strong>16011</strong></a>
               <span class="hotline-hours">{{ t('يومياً ٧ ص – ١٠ م', 'Daily 7 AM – 10 PM') }}</span>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
           <div class="footer-badges">
-            <span class="guinness-badge">🏆 {{ t('موسوعة غينيس للأرقام القياسية', 'Guinness World Records') }}</span>
-            <span class="tasteatlas-badge">⭐ {{ t('أفضل ١٠٠ مطعم – TasteAtlas', 'Top 100 Legendary – TasteAtlas') }}</span>
+            <span class="guinness-badge"><AppIcon name="trophy" :size="14" aria-hidden="true" /> {{ t('موسوعة غينيس للأرقام القياسية', 'Guinness World Records') }}</span>
+            <span class="tasteatlas-badge"><AppIcon name="star-fill" :size="14" aria-hidden="true" /> {{ t('أفضل ١٠٠ مطعم – TasteAtlas', 'Top 100 Legendary – TasteAtlas') }}</span>
           </div>
           <p class="footer-copy">© {{ new Date().getFullYear() }} {{ t('كشري أبو طارق. جميع الحقوق محفوظة.', 'Koshary Abou Tarek. All rights reserved.') }}</p>
         </div>

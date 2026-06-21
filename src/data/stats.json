@@ -1,0 +1,14 @@
+{
+  "hero": [
+    { "value": "1950s", "labelAr": "التأسيس",  "labelEn": "Founded"   },
+    { "value": "4",     "labelAr": "طوابق",    "labelEn": "Floors"    },
+    { "value": "6+",    "labelAr": "فروع",     "labelEn": "Branches"  },
+    { "value": "3",     "labelAr": "دول",      "labelEn": "Countries" }
+  ],
+  "landing": [
+    { "value": "70+",  "labelAr": "عامًا من الخبرة",    "labelEn": "Years of Excellence"      },
+    { "value": "6+",   "labelAr": "فروع في 3 دول",       "labelEn": "Branches in 3 Countries" },
+    { "value": "4",    "labelAr": "طوابق في وسط البلد",  "labelEn": "Floors Downtown Cairo"   },
+    { "value": "GWR",  "labelAr": "سجل غينيس",           "labelEn": "Guinness World Record"   }
+  ]
+}

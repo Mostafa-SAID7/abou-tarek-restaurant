@@ -253,6 +253,12 @@ button, input, textarea, select { font-family: inherit; }
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
 }
+/* Page hero children — used by all inner-page hero banners */
+.page-hero-inner { position: relative; z-index: 1; }
+.page-eyebrow    { font-size: .8rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .1em; display: block; margin-bottom: var(--sp-2); }
+.page-hero-title { font-size: clamp(2rem,5vw,3.5rem); font-weight: 900; color: #fff; margin: 0 0 var(--sp-3); font-family: 'Cairo', sans-serif; }
+.page-hero-sub   { font-size: 1rem; color: rgba(255,255,255,.72); margin: 0; }
+
 .hero-glass-chip {
   display: inline-flex; align-items: center; gap: var(--sp-2);
   background: var(--hero-glass); border: 1px solid var(--hero-glass-border);
@@ -260,9 +266,21 @@ button, input, textarea, select { font-family: inherit; }
   font-size: .75rem; font-weight: 600; letter-spacing: .04em;
 }
 
+/* Section eyebrow pill — small labelled tag above section headings */
+.section-eyebrow { display: inline-block; font-size: .75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: .1em; background: var(--primary-light); padding: 3px 12px; border-radius: var(--r-pill); margin-bottom: var(--sp-2); }
+
 /* Section typography */
 .section-title { font-size: 1.35rem; font-weight: 800; color: var(--text); line-height: 1.2; }
 .section-sub   { font-size: .9rem; color: var(--text-muted); margin-top: var(--sp-1); }
+
+/* Shared page body container — max-width centred column */
+.content-inner { max-width: 1100px; margin: 0 auto; padding: var(--sp-10) var(--sp-8); }
+@media (max-width: 640px) { .content-inner { padding: var(--sp-6) var(--sp-4); } }
+
+/* Empty state — used when a list has no items */
+.empty-state    { text-align: center; padding: var(--sp-12) var(--sp-6); display: flex; flex-direction: column; align-items: center; gap: var(--sp-4); color: var(--text-muted); }
+.empty-state h3 { margin: 0; font-size: 1.2rem; color: var(--text); }
+.empty-state p  { margin: 0; }
 
 /* Loading spinner */
 .spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid rgba(255,255,255,.35); border-top-color: #fff; border-radius: var(--r-pill); animation: spin .7s linear infinite; }

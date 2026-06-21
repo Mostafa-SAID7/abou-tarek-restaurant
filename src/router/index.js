@@ -32,6 +32,12 @@ const routes = [
     component: () => import('../views/ContactView.vue'),
     meta: { title: 'تواصل معنا | Contact Us' }
   },
+  {
+    path: '/branches',
+    name: 'Branches',
+    component: () => import('../views/BranchesView.vue'),
+    meta: { title: 'الفروع | Our Branches' }
+  },
 
   /* ── 404 Not Found ── */
   {

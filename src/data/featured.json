@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "image": "/branch1.png",
+    "link": "/news",
+    "titleAr": "كشري أبو طارق يدخل موسوعة جينيس بأكبر طبق كشري في العالم",
+    "titleEn": "Koshary Abou Tarek Enters Guinness with the World's Largest Koshary Dish",
+    "descAr": "حقق كشري أبو طارق رقمًا قياسيًا في موسوعة غينيس للأرقام القياسية بتحضير أكبر طبق كشري في التاريخ، في احتفالية وطنية كبرى جمعت آلاف المصريين.",
+    "descEn": "Koshary Abou Tarek set a Guinness World Record by preparing the largest koshary dish in history, in a grand national celebration that brought together thousands of Egyptians."
+  },
+  {
+    "id": 2,
+    "image": "/branch1.png",
+    "link": "/news",
+    "titleAr": "TasteAtlas تختار كشري أبو طارق ضمن أفضل ١٠٠ مطعم أسطوري",
+    "titleEn": "TasteAtlas Names Koshary Abou Tarek Among Top 100 Legendary Restaurants",
+    "descAr": "حصد المطعم الأسطوري لقب \"مطعم أسطوري\" من موقع TasteAtlas الشهير للمطاعم والأكلات الشعبية، ليكون الأول مصريًا وعربيًا في هذه القائمة المرموقة.",
+    "descEn": "The legendary restaurant earned the \"Legendary Restaurant\" title from TasteAtlas, the renowned food and travel guide, becoming the first Egyptian and Arab entry on this prestigious list."
+  }
+]

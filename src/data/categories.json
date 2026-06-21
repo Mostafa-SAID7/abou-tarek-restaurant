@@ -1,0 +1,47 @@
+[
+  {
+    "id": "koshary",
+    "icon": "bowl",
+    "headingId": "koshary-heading",
+    "nameAr": "كشري",
+    "nameEn": "Koshary",
+    "descAr": "الأكلة الشعبية الوطنية المصرية. طبقات من الأرز والعدس البني والمكرونة مع صلصة الطماطم المتبلة والبصل المقلي المقرمش والحمص والدقة. نباتي ١٠٠٪.",
+    "descEn": "Egypt's national street food. Layers of rice, brown lentils & pasta topped with spiced tomato sauce, crispy fried onions, chickpeas & tangy daqqah. 100% plant-based."
+  },
+  {
+    "id": "soups",
+    "icon": "soup",
+    "headingId": "soup-heading",
+    "nameAr": "شوربة",
+    "nameEn": "Soups",
+    "descAr": "شورب مصرية تقليدية مطبوخة يوميًا على نار هادئة من مكونات طازجة.",
+    "descEn": "Traditional Egyptian soups slow-cooked daily from fresh ingredients."
+  },
+  {
+    "id": "desserts",
+    "icon": "cake",
+    "headingId": "dessert-heading",
+    "nameAr": "حلويات",
+    "nameEn": "Desserts",
+    "descAr": "حلويات مصرية كلاسيكية لإنهاء وجبتك.",
+    "descEn": "Sweet Egyptian classics to round off your meal."
+  },
+  {
+    "id": "drinks",
+    "icon": "cup",
+    "headingId": "drinks-heading",
+    "nameAr": "مشروبات",
+    "nameEn": "Drinks",
+    "descAr": "مشروبات غازية متوفرة في جميع الفروع.",
+    "descEn": "Soft drinks and beverages available at all branches."
+  },
+  {
+    "id": "extras",
+    "icon": "plus-circle",
+    "headingId": "extras-heading",
+    "nameAr": "إضافات",
+    "nameEn": "Add-ons",
+    "descAr": "خصّص طبقك كما تريد — إضافات لذيذة بأسعار رمزية.",
+    "descEn": "Customize your plate — delicious add-ons at modest prices."
+  }
+]

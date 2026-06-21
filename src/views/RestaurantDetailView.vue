@@ -10,7 +10,7 @@
 
       <!-- Hero -->
       <div class="detail-hero">
-        <div class="hero-bowl" aria-hidden="true">🍲</div>
+        <div class="hero-bowl" aria-hidden="true"><AppIcon name="bowl" :size="80" color="rgba(255,255,255,.85)" /></div>
         <div class="hero-info">
           <div class="hero-top">
             <div>
@@ -19,7 +19,7 @@
                   <AppIcon name="star-fill" :size="11" aria-hidden="true" />
                   Flagship
                 </span>
-                <span class="badge" style="background:var(--hero-glass);color:#fff;border:1px solid var(--hero-glass-border)">
+                <span class="badge badge-glass">
                   {{ restaurant.area }}
                 </span>
               </div>
@@ -128,7 +128,7 @@
           <p>Remove <strong>{{ restaurant?.name }}</strong>? This cannot be undone.</p>
           <div class="modal-actions">
             <button class="btn btn-secondary" @click="showDelete = false">Cancel</button>
-            <button class="btn btn-danger" style="background:var(--error);color:#fff" @click="doDelete">
+            <button class="btn btn-danger" @click="doDelete">
               <AppIcon name="trash" :size="14" aria-hidden="true" />
               Delete
             </button>
@@ -191,6 +191,7 @@ onMounted(() => {
 .hero-info { flex: 1; min-width: 0; }
 .hero-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-3); }
 .hero-badges { display: flex; gap: var(--sp-2); flex-wrap: wrap; margin-bottom: var(--sp-2); }
+.badge-glass  { background: var(--hero-glass); color: #fff; border: 1px solid var(--hero-glass-border); }
 .hero-title { margin: 0; font-size: 1.5rem; font-weight: 900; color: #fff; line-height: 1.25; }
 .hero-desc  { margin: 0; font-size: .88rem; color: rgba(255,255,255,.8); line-height: 1.6; }
 

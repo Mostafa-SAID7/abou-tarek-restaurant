@@ -1,0 +1,2 @@
+- [Data architecture](data-architecture.md) — canonical JSON data files for all static content; components import directly (not via store/localStorage)
+- [ESLint compile errors](eslint-vue-cli.md) — Vue CLI ESLint treats unused imports in script setup as hard errors; mid-edit transient errors are normal and resolve automatically

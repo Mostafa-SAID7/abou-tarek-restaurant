@@ -2,7 +2,9 @@
   <div class="auth-shell">
     <div class="auth-card card">
       <div class="auth-brand">
-        <div class="auth-logo">🍲</div>
+        <div class="auth-logo">
+          <AppIcon name="bowl" :size="28" color="#fff" aria-hidden="true" />
+        </div>
         <div class="brand-text">
           <span class="brand-ar">كشري أبو طارق</span>
           <span class="brand-en">Koshary Abou Tarek</span>
@@ -12,6 +14,10 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import AppIcon from '../components/AppIcon.vue'
+</script>
 
 <style scoped>
 .auth-shell {
@@ -37,7 +43,7 @@
   width: 52px; height: 52px;
   background: var(--primary); border-radius: var(--r-xl);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.8rem; box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
 }
 .brand-text { display: flex; flex-direction: column; gap: 2px; }
 .brand-ar { font-size: 1.05rem; font-weight: 900; color: var(--primary); line-height: 1; }

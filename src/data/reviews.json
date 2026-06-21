@@ -1,0 +1,42 @@
+[
+  {
+    "textAr": "تجربة لا تُنسى! الكشري هنا له طعم مختلف تمامًا عن أي مكان آخر. المكان نظيف والخدمة سريعة والأسعار معقولة جدًا.",
+    "textEn": "An unforgettable experience! The koshary here has a completely different taste from anywhere else. Clean place, fast service, and very reasonable prices.",
+    "name": "أحمد محمد",
+    "rating": 5,
+    "roleAr": "عميل منتظم",
+    "roleEn": "Regular Customer"
+  },
+  {
+    "textAr": "زرت المطعم لأول مرة في رحلتي إلى القاهرة ووجدته في قائمة أفضل مطاعم مصر. والله يستاهل كل كلمة مدح!",
+    "textEn": "I visited the restaurant for the first time on my trip to Cairo after finding it on Egypt's best restaurants list. It truly deserves every word of praise!",
+    "name": "سارة خالد",
+    "rating": 5,
+    "roleAr": "زائرة من الكويت",
+    "roleEn": "Visitor from Kuwait"
+  },
+  {
+    "textAr": "أكلت الكشري في أماكن كثيرة لكن أبو طارق له مذاق خاص. الصلصة والدقة مختلفة. شكرًا على الاستقبال الجميل دائمًا.",
+    "textEn": "I've had koshary in many places but Abou Tarek has a special flavor. The sauce and daqqah are different. Thank you for the wonderful reception always.",
+    "name": "محمد علي",
+    "rating": 5,
+    "roleAr": "من القاهرة",
+    "roleEn": "From Cairo"
+  },
+  {
+    "textAr": "المطعم ذو التاريخ العريق يحافظ على جودته منذ سنوات. الكشري هنا هو الأصل والباقي تقليد.",
+    "textEn": "This historic restaurant has maintained its quality for years. The koshary here is the original, everything else is an imitation.",
+    "name": "فاطمة إبراهيم",
+    "rating": 5,
+    "roleAr": "من الإسكندرية",
+    "roleEn": "From Alexandria"
+  },
+  {
+    "textAr": "تجربة رائعة في مطعم بتاريخ أكثر من 70 سنة. استحق كل لحظة انتظار. سأعود قريبًا بالتأكيد!",
+    "textEn": "An amazing experience at a restaurant with over 70 years of history. Worth every moment of waiting. I will definitely be back soon!",
+    "name": "Omar Hassan",
+    "rating": 5,
+    "roleAr": "زائر من الخارج",
+    "roleEn": "International Visitor"
+  }
+]
