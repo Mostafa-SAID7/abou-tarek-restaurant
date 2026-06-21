@@ -1,27 +1,29 @@
 {
   "name": "restaurant-project",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "format": "prettier --write \"src/**/*.{js,vue,json,css}\""
   },
   "dependencies": {
-    "axios": "^1.18.0",
-    "core-js": "^3.49.0",
-    "pinia": "^3.0.4",
-    "vue": "^3.5.38",
-    "vue-router": "^4.6.4"
+    "axios": "^1.7.0",
+    "core-js": "^3.38.0",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.31",
+    "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
-    "@babel/eslint-parser": "^7.29.7",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "^3.12.1",
-    "@vue/cli-service": "^5.0.9",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.7.1"
+    "@babel/core": "^7.24.7",
+    "@babel/eslint-parser": "^7.24.7",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "prettier": "^3.3.2"
   },
   "overrides": {
     "shell-quote": "1.8.4",
@@ -36,19 +38,21 @@
       "vue/setup-compiler-macros": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/vue3-recommended",
       "eslint:recommended"
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser",
       "requireConfigFile": false
     },
-    "rules": {}
+    "rules": {
+      "no-console": "off",
+      "no-debugger": "off"
+    }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not dead",
-    "not ie 11"
+    "not dead"
   ]
 }

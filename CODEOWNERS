@@ -1,0 +1,14 @@
+# This file designates code owners for this repository
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners
+* @Mostafa-SAID7
+
+# Documentation
+docs/ @Mostafa-SAID7
+
+# Configuration
+*.config.* @Mostafa-SAID7
+.github/ @Mostafa-SAID7
+Dockerfile @Mostafa-SAID7
+netlify.toml @Mostafa-SAID7

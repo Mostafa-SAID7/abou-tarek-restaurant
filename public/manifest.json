@@ -1,7 +1,7 @@
 {
   "name": "Koshary Abou Tarek – كشري أبو طارق",
   "short_name": "أبو طارق",
-  "description": "Egypt's most iconic koshary restaurant since the 1950s. Manage all branch locations.",
+  "description": "Egypt's most iconic koshary restaurant since the 1950s. View branches, menu, and place orders.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -9,70 +9,37 @@
   "background_color": "#120808",
   "theme_color": "#C8102E",
   "lang": "ar",
-  "dir": "ltr",
-  "categories": ["food", "lifestyle", "business"],
+  "dir": "auto",
+  "categories": ["food", "lifestyle"],
   "icons": [
     {
       "src": "/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
-    },
-    {
-      "src": "/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
     }
   ],
   "shortcuts": [
     {
-      "name": "Our Branches",
+      "name": "Menu",
+      "short_name": "Menu",
+      "description": "View our full menu",
+      "url": "/menu",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Branches",
       "short_name": "Branches",
-      "description": "View all Koshary Abou Tarek branch locations",
+      "description": "Find a branch near you",
       "url": "/",
-      "icons": [{ "src": "/icon.svg", "sizes": "any" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     },
     {
-      "name": "Add Branch",
-      "short_name": "Add",
-      "description": "Add a new branch location",
-      "url": "/add",
-      "icons": [{ "src": "/icon.svg", "sizes": "any" }]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshot-wide.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Koshary Abou Tarek Branch Manager – Desktop"
-    },
-    {
-      "src": "/screenshot-narrow.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Koshary Abou Tarek Branch Manager – Mobile"
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Contact us",
+      "url": "/contact",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     }
   ],
   "prefer_related_applications": false,
