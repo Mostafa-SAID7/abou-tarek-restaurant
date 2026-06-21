@@ -5,37 +5,33 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint --ext .js,.vue src",
     "format": "prettier --write \"src/**/*.{js,vue,json,css}\""
   },
   "dependencies": {
-    "axios": "^1.7.0",
-    "core-js": "^3.38.0",
+    "axios": "^1.6.8",
     "pinia": "^2.1.7",
     "vue": "^3.4.31",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/eslint-parser": "^7.24.7",
-    "@vue/cli-plugin-babel": "~5.0.8",
-    "@vue/cli-plugin-eslint": "~5.0.8",
-    "@vue/cli-service": "~5.0.8",
-    "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.27.0",
-    "prettier": "^3.3.2"
-  },
-  "overrides": {
-    "shell-quote": "1.8.4",
-    "form-data": "4.0.6",
-    "sha.js": "2.4.12",
-    "pbkdf2": "3.1.6"
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.24.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.26.0",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35"
   },
   "eslintConfig": {
     "root": true,
     "env": {
       "node": true,
-      "vue/setup-compiler-macros": true
+      "browser": true,
+      "es2021": true
     },
     "extends": [
       "plugin:vue/vue3-recommended",
@@ -43,16 +39,19 @@
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser",
-      "requireConfigFile": false
+      "requireConfigFile": false,
+      "ecmaVersion": 2020
     },
     "rules": {
-      "no-console": "off",
-      "no-debugger": "off"
+      "vue/multi-word-component-names": "off",
+      "no-console": "warn",
+      "no-debugger": "warn"
     }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not dead"
+    "not dead",
+    "not ie 11"
   ]
 }
