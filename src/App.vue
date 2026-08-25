@@ -1,40 +1,16 @@
 <template>
-  <div class="app-body" style="background: #f5f5f5; min-height: 100vh;">
-    <!-- Navbar -->
-    <nav style="background: #C8102E; color: white; padding: 20px; text-align: center; display: flex; justify-content: space-around; align-items: center;">
-      <div style="font-weight: bold; font-size: 20px;">🍲 Koshary Abou Tarek</div>
-      <div style="display: flex; gap: 20px;">
-        <router-link to="/" style="color: white; text-decoration: none;">Home</router-link>
-        <router-link to="/menu" style="color: white; text-decoration: none;">Menu</router-link>
-        <router-link to="/branches" style="color: white; text-decoration: none;">Branches</router-link>
-        <router-link to="/about" style="color: white; text-decoration: none;">About</router-link>
-      </div>
-    </nav>
+  <ErrorBoundary>
+    <Suspense>
+      <template #default>
+        <router-view />
+      </template>
+      <template #fallback>
+        <div style="padding: 20px; text-align: center; color: #999;">⏳ Loading page...</div>
+      </template>
+    </Suspense>
+  </ErrorBoundary>
 
-    <!-- Main content -->
-    <div style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
-      <div style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <h1 style="color: #C8102E; margin-top: 0;">✅ App is Running!</h1>
-        <p style="color: #666; font-size: 16px;">
-          The application has loaded successfully. Vue.js, Router, and all systems are operational.
-        </p>
-        
-        <!-- Router view with error boundary -->
-        <ErrorBoundary>
-          <Suspense>
-            <template #default>
-              <router-view />
-            </template>
-            <template #fallback>
-              <div style="padding: 20px; text-align: center; color: #999;">⏳ Loading page...</div>
-            </template>
-          </Suspense>
-        </ErrorBoundary>
-      </div>
-    </div>
-
-    <AppToast />
-  </div>
+  <AppToast />
 </template>
 
 <script setup>
@@ -48,9 +24,6 @@ onErrorCaptured((err) => {
 </script>
 
 <style>
-/* App body wrapper */
-.app-body { min-height: 100vh; display: flex; flex-direction: column; }
-
 /* ══════════════════════════════════════════════
    DESIGN TOKENS  —  single source of truth
 ══════════════════════════════════════════════ */
