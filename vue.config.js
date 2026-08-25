@@ -6,11 +6,10 @@ module.exports = defineConfig({
   /* App title for html-webpack-plugin */
   chainWebpack: config => {
     config.plugin('html').tap(args => {
-      args[0].title = 'كشري أبو طارق | Koshary Abou Tarek'
-      args[0].meta = {}
+      args[0].template = require('path').join(__dirname, './public/index.html')
       return args
     })
-
+    
     /* Aggressive chunk splitting for performance */
     config.optimization.splitChunks({
       chunks: 'all',

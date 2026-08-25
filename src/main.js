@@ -3,16 +3,42 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router/index'
 import { seedStorageIfNeeded } from './data/seed'
+import './assets/styles/globals.css'
+
+console.log('🔵 [1] main.js loaded')
 
 /**
  * Initialize app with seed data
  */
-seedStorageIfNeeded()
+async function initApp() {
+  try {
+    console.log('🔵 [2] Seeding storage...')
+    await seedStorageIfNeeded()
+    console.log('🟢 [3] Storage seeded successfully')
+  } catch (error) {
+    console.error('🔴 [!] Seed error:', error)
+  }
 
-const app = createApp(App)
-app.use(createPinia())
-app.use(router)
-app.mount('#app')
+  try {
+    console.log('🔵 [4] Creating Vue app...')
+    const app = createApp(App)
+    console.log('🟢 [5] App created')
+    
+    app.use(createPinia())
+    console.log('🟢 [6] Pinia installed')
+    
+    app.use(router)
+    console.log('🟢 [7] Router installed')
+    
+    app.mount('#app')
+    console.log('🟢 [8] App mounted to #app successfully!')
+  } catch (error) {
+    console.error('🔴 [!] App init error:', error)
+    document.body.innerHTML = '<div style="color: red; font-size: 20px; padding: 20px;">ERROR: ' + error.message + '</div>'
+  }
+}
+
+initApp()
 
 /* ── Register Service Worker (PWA) ── */
 if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {

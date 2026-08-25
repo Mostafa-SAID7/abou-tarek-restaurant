@@ -1,34 +1,49 @@
 <template>
-  <AppLoader v-if="loading" @done="loading = false" />
+  <div class="app-body" style="background: #f5f5f5; min-height: 100vh;">
+    <!-- Navbar -->
+    <nav style="background: #C8102E; color: white; padding: 20px; text-align: center; display: flex; justify-content: space-around; align-items: center;">
+      <div style="font-weight: bold; font-size: 20px;">🍲 Koshary Abou Tarek</div>
+      <div style="display: flex; gap: 20px;">
+        <router-link to="/" style="color: white; text-decoration: none;">Home</router-link>
+        <router-link to="/menu" style="color: white; text-decoration: none;">Menu</router-link>
+        <router-link to="/branches" style="color: white; text-decoration: none;">Branches</router-link>
+        <router-link to="/about" style="color: white; text-decoration: none;">About</router-link>
+      </div>
+    </nav>
 
-  <Transition name="page-reveal">
-    <div v-if="!loading" class="app-body">
-      <ErrorBoundary>
-        <router-view v-slot="{ Component, route }">
-          <Transition name="page" mode="out-in">
-            <component :is="Component" :key="route.path" />
-          </Transition>
-        </router-view>
-        <AppToast />
-      </ErrorBoundary>
+    <!-- Main content -->
+    <div style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+      <div style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h1 style="color: #C8102E; margin-top: 0;">✅ App is Running!</h1>
+        <p style="color: #666; font-size: 16px;">
+          The application has loaded successfully. Vue.js, Router, and all systems are operational.
+        </p>
+        
+        <!-- Router view with error boundary -->
+        <ErrorBoundary>
+          <Suspense>
+            <template #default>
+              <router-view />
+            </template>
+            <template #fallback>
+              <div style="padding: 20px; text-align: center; color: #999;">⏳ Loading page...</div>
+            </template>
+          </Suspense>
+        </ErrorBoundary>
+      </div>
     </div>
-  </Transition>
+
+    <AppToast />
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import AppLoader from './components/AppLoader.vue'
+import { onErrorCaptured } from 'vue'
 import AppToast from './components/AppToast.vue'
 import ErrorBoundary from './components/ErrorBoundary.vue'
 
-const router  = useRouter()
-const loading = ref(true)
-
-onMounted(async () => {
-  await router.isReady()
-  // AppLoader controls its own minimum display time (1.4s)
-  // and emits 'done' when its exit animation finishes
+onErrorCaptured((err) => {
+  console.error('[App Error]:', err)
 })
 </script>
 
