@@ -23,3 +23,10 @@ onErrorCaptured((err) => {
 })
 </script>
 
+<style scoped>
+.app-loading-fallback {
+  padding: var(--sp-5);
+  color: var(--text-muted);
+  text-align: center;
+}
+</style>
