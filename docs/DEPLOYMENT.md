@@ -21,17 +21,6 @@ vercel
 - Preview deployments for PRs
 - Serverless functions support
 
-### Netlify
-
-```bash
-npm i -g netlify-cli
-netlify deploy --prod --dir dist
-```
-
-- Easy drag-and-drop deployment
-- Built-in CI/CD
-- Form submissions support
-
 ### GitHub Pages
 
 ```bash
