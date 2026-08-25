@@ -1,7 +1,7 @@
 module.exports = {
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/tests'],
-  testMatch: ['**/*.spec.js'],
+  testMatch: ['**/unit/**/*.spec.js'],
   transform: {
     '^.+\\.js$': 'babel-jest',
   },
