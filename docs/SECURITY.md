@@ -64,7 +64,7 @@ npm update
 
 ## Content Security Policy
 
-Headers configured in `netlify.toml` and `nginx.conf`:
+Headers configured in `vercel.json` and `nginx.conf`:
 - `X-Content-Type-Options: nosniff`
 - `X-Frame-Options: SAMEORIGIN`
 - `X-XSS-Protection: 1; mode=block`
@@ -73,7 +73,7 @@ Headers configured in `netlify.toml` and `nginx.conf`:
 ## HTTPS
 
 - Required in production
-- Automatically configured on Netlify
+- Automatically managed by Vercel
 - Use SSL certificates from Let's Encrypt (free)
 
 ## Accessibility & Security

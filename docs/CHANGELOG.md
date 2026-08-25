@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🚀 Performance optimized (~95KB gzipped)
 - 📖 Comprehensive documentation
 - 🐳 Docker support
-- 🚀 Netlify deployment automation
+- 🚀 Vercel deployment automation
 - ✅ GitHub Actions CI/CD
 
 ### Pages
