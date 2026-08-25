@@ -18,6 +18,20 @@ test.describe('public navigation', () => {
     await expect(page).toHaveURL(/\/menu$/);
     await expect(page.locator('.menu-hero')).toBeVisible();
   });
+
+  test('renders the not-found page for unknown routes', async ({ page }) => {
+    await page.goto('/does-not-exist', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('h1')).toContainText('404');
+    await expect(page.locator('a[href="/"]')).toBeVisible();
+  });
+
+  test('exposes keyboard and landmark accessibility basics', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('a.skip-link')).toHaveAttribute('href', '#main-content');
+    await expect(page.locator('nav[aria-label]')).toBeVisible();
+    await expect(page.locator('main#main-content')).toHaveAttribute('id', 'main-content');
+    await expect(page.locator('footer[role="contentinfo"]')).toBeVisible();
+  });
 });
 
 test.describe('preferences and menu filtering', () => {
