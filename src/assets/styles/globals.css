@@ -9,12 +9,16 @@
   --primary-shadow: rgba(200, 16, 46, .18);
   --gold: #F5A623;
   --gold-light: #fff8ec;
-  --gold-text: #b37400;
+  --gold-text: #805000;
+  --ink-950: #1a0a0a;
+  --ink-900: #241113;
+  --accent-brown: #8a5a2b;
+  --accent-olive: #466950;
   --bg: #f7f3f3;
   --surface: #ffffff;
   --border: #e8d8d8;
   --text: #1a0a0a;
-  --text-muted: #7a5a5a;
+  --text-muted: #684d4f;
   --success: #10b981;
   --success-light: #ecfdf5;
   --error: #ef4444;
@@ -52,6 +56,11 @@
   --max-content: 1200px;
   --max-body: 900px;
   --hero-gradient: linear-gradient(135deg, #8b0920 0%, var(--primary) 45%, #a50e28 100%);
+  --landing-about-bg: url('~@/../public/About-bg.webp');
+  --landing-separator-bg: url('~@/../public/MainHomeSeparator.webp');
+  --landing-separator-mask: url('~@/../public/HomeSeparator2.png');
+  --landing-vr-bg: url('~@/../public/VRbg.webp');
+  --landing-reviews-bg: url('~@/../public/Testimonialsbg.png');
   --hero-glass: rgba(255, 255, 255, .13);
   --hero-glass-border: rgba(255, 255, 255, .22);
   --font-body: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -66,7 +75,11 @@
   --primary-shadow: rgba(232, 64, 96, .2);
   --gold: #F5A623;
   --gold-light: #2d2210;
-  --gold-text: #c89030;
+  --gold-text: #f5be55;
+  --ink-950: #120808;
+  --ink-900: #1e0e0e;
+  --accent-brown: #c99557;
+  --accent-olive: #81ae89;
   --bg: #120808;
   --surface: #1e0e0e;
   --border: #3d2020;
@@ -95,6 +108,9 @@ body {
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button, input, textarea, select { font-family: inherit; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+::selection { background: var(--primary); color: #fff; }
 [lang="ar"]:not(html):not(body), .ar, .brand-ar, .hero-ar, .item-name-ar { font-family: var(--font-arabic); unicode-bidi: embed; }
 .en-display, .hero-en, .brand-en, .script { font-family: var(--font-display); font-weight: 600; }
 
@@ -177,6 +193,7 @@ button, input, textarea, select { font-family: inherit; }
 
   .btn-primary {
     @apply bg-primary text-white hover:opacity-90 focus:ring-primary;
+    box-shadow: var(--shadow-primary);
   }
 
   .btn-secondary {
@@ -211,6 +228,11 @@ button, input, textarea, select { font-family: inherit; }
   /* Cards */
   .card {
     @apply bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 p-6 shadow-md hover:shadow-lg transition-shadow;
+  }
+
+  .content-frame {
+    width: min(100% - 2rem, var(--max-content));
+    margin-inline: auto;
   }
 
   .card-title {
