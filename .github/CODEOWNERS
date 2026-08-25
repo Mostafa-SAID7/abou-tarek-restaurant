@@ -11,4 +11,4 @@ docs/ @Mostafa-SAID7
 *.config.* @Mostafa-SAID7
 .github/ @Mostafa-SAID7
 Dockerfile @Mostafa-SAID7
-netlify.toml @Mostafa-SAID7
+vercel.json @Mostafa-SAID7
