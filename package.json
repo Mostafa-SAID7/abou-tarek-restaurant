@@ -13,6 +13,7 @@
     "format": "prettier --write \"src/**/*.{js,vue,json,css}\"",
     "format:check": "prettier --check \"src/**/*.{js,vue,json,css}\"",
     "test:unit": "jest --runInBand",
+    "test:e2e": "playwright test",
     "test": "npm run lint && npm run test:unit && npm run build",
     "prepare": "husky"
   },
@@ -30,6 +31,7 @@
     "@babel/core": "^7.24.0",
     "@babel/eslint-parser": "^7.24.0",
     "@babel/plugin-transform-modules-commonjs": "^7.29.7",
+    "@playwright/test": "^1.61.1",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
