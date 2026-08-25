@@ -1,74 +1,74 @@
 <template>
   <DefaultLayout>
-    <section class="page-hero" :style="{ backgroundImage: 'url(/branch1.png)' }" aria-label="Contact">
-      <div class="page-hero-inner">
+    <section class="page-hero relative flex min-h-[280px] items-center justify-center overflow-hidden bg-cover bg-[center_30%] before:absolute before:inset-0 before:bg-[linear-gradient(to_bottom,rgba(15,4,4,.72)_0%,rgba(20,6,6,.88)_100%)]" :style="{ backgroundImage: 'url(/branch1.png)' }" aria-label="Contact">
+      <div class="page-hero-inner relative z-[1]">
         <span class="page-eyebrow">{{ t('كشري أبو طارق', 'Koshary Abou Tarek') }}</span>
         <h1 class="page-hero-title">{{ t('تواصل معنا', 'Contact Us') }}</h1>
         <p class="page-hero-sub">{{ t('نحن هنا لخدمتك', 'We\'re Here to Serve You') }}</p>
       </div>
     </section>
 
-    <div class="contact-body">
-      <div class="content-inner contact-inner">
+    <div class="contact-body bg-[var(--bg)]">
+      <div class="content-inner contact-inner flex flex-col gap-8">
 
         <!-- Quick cards -->
-        <div class="contact-cards">
-          <a href="tel:16011" class="contact-card phone-card">
-            <div class="cc-icon"><AppIcon name="phone" :size="24" color="currentColor" aria-hidden="true" /></div>
-            <div class="cc-text">
-              <span class="cc-label">{{ t('خط التوصيل', 'Delivery Hotline') }}</span>
-              <span class="cc-value">16011</span>
-              <span class="cc-sub">{{ t('يومياً ٧ ص – ١٠ م', 'Daily 7 AM – 10 PM') }}</span>
+        <div class="contact-cards grid grid-cols-1 gap-4 min-[861px]:grid-cols-3">
+          <a href="tel:16011" class="contact-card phone-card flex items-center gap-4 rounded-2xl border-[1.5px] border-gold bg-[var(--surface)] p-5 no-underline transition duration-200 hover:border-gold hover:shadow-[0_4px_16px_rgba(245,166,35,.25)]">
+            <div class="cc-icon shrink-0 text-[2rem]"><AppIcon name="phone" :size="24" color="currentColor" aria-hidden="true" /></div>
+            <div class="cc-text flex flex-col gap-0.5">
+              <span class="cc-label text-[.72rem] uppercase tracking-[.06em] text-[var(--text-muted)]">{{ t('خط التوصيل', 'Delivery Hotline') }}</span>
+              <span class="cc-value text-[1.1rem] font-extrabold text-[var(--text)]">16011</span>
+              <span class="cc-sub text-[.75rem] text-[var(--text-muted)]">{{ t('يومياً ٧ ص – ١٠ م', 'Daily 7 AM – 10 PM') }}</span>
             </div>
           </a>
-          <a href="https://www.instagram.com/koshariabotarek" target="_blank" rel="noopener" class="contact-card social-card">
-            <div class="cc-icon"><AppIcon name="camera" :size="24" color="currentColor" aria-hidden="true" /></div>
-            <div class="cc-text">
-              <span class="cc-label">Instagram</span>
-              <span class="cc-value">@koshariabotarek</span>
+          <a href="https://www.instagram.com/koshariabotarek" target="_blank" rel="noopener" class="contact-card social-card flex items-center gap-4 rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--surface)] p-5 no-underline transition duration-200 hover:border-primary hover:shadow-primary">
+            <div class="cc-icon shrink-0 text-[2rem]"><AppIcon name="camera" :size="24" color="currentColor" aria-hidden="true" /></div>
+            <div class="cc-text flex flex-col gap-0.5">
+              <span class="cc-label text-[.72rem] uppercase tracking-[.06em] text-[var(--text-muted)]">Instagram</span>
+              <span class="cc-value text-[1.1rem] font-extrabold text-[var(--text)]">@koshariabotarek</span>
             </div>
           </a>
-          <a href="https://www.facebook.com/kosharyabotarek" target="_blank" rel="noopener" class="contact-card social-card">
-            <div class="cc-icon"><AppIcon name="users" :size="24" color="currentColor" aria-hidden="true" /></div>
-            <div class="cc-text">
-              <span class="cc-label">Facebook</span>
-              <span class="cc-value">@kosharyabotarek</span>
+          <a href="https://www.facebook.com/kosharyabotarek" target="_blank" rel="noopener" class="contact-card social-card flex items-center gap-4 rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--surface)] p-5 no-underline transition duration-200 hover:border-primary hover:shadow-primary">
+            <div class="cc-icon shrink-0 text-[2rem]"><AppIcon name="users" :size="24" color="currentColor" aria-hidden="true" /></div>
+            <div class="cc-text flex flex-col gap-0.5">
+              <span class="cc-label text-[.72rem] uppercase tracking-[.06em] text-[var(--text-muted)]">Facebook</span>
+              <span class="cc-value text-[1.1rem] font-extrabold text-[var(--text)]">@kosharyabotarek</span>
             </div>
           </a>
         </div>
 
         <!-- Main content: map placeholder + form -->
-        <div class="contact-grid">
+        <div class="contact-grid grid grid-cols-1 items-start gap-8 min-[861px]:grid-cols-2">
 
           <!-- Location -->
           <div class="contact-location">
-            <h2>{{ t('الفرع الرئيسي', 'Main Branch') }}</h2>
-            <div class="location-map-placeholder">
-              <div class="map-pin-anim" aria-hidden="true">
+            <h2 class="mb-4 text-[1.2rem] font-black text-[var(--text)]">{{ t('الفرع الرئيسي', 'Main Branch') }}</h2>
+            <div class="location-map-placeholder flex min-h-[160px] flex-col items-center justify-center gap-3 rounded-2xl border border-white/[.06] bg-[linear-gradient(135deg,#1a0a0a,#2d1515)] p-8 text-center">
+              <div class="map-pin-anim animate-[pinPulse_2s_ease-in-out_infinite] text-[3rem]" aria-hidden="true">
                 <AppIcon name="map-pin" :size="40" color="var(--primary)" aria-hidden="true" />
               </div>
-              <p>{{ t('١٦ شارع معروف، تقاطع شارع شامبليون، وسط القاهرة، مصر', '16 Maarouf St., Champollion St. Intersection, Downtown Cairo, Egypt') }}</p>
+              <p class="m-0 text-[.85rem] leading-[1.6] text-white/[.6]">{{ t('١٦ شارع معروف، تقاطع شارع شامبليون، وسط القاهرة، مصر', '16 Maarouf St., Champollion St. Intersection, Downtown Cairo, Egypt') }}</p>
             </div>
-            <div class="location-details">
-              <div class="loc-detail">
-                <span class="loc-icon"><AppIcon name="clock" :size="20" color="var(--primary)" aria-hidden="true" /></span>
+            <div class="location-details flex flex-col gap-4">
+              <div class="loc-detail flex items-start gap-3">
+                <span class="loc-icon mt-0.5 shrink-0 text-[1.3rem]"><AppIcon name="clock" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
-                  <strong>{{ t('ساعات العمل', 'Opening Hours') }}</strong>
-                  <p>{{ t('يومياً من ٧ صباحًا حتى منتصف الليل', 'Daily from 7 AM to midnight') }}</p>
+                  <strong class="mb-0.5 block text-[.85rem] font-bold text-[var(--text)]">{{ t('ساعات العمل', 'Opening Hours') }}</strong>
+                  <p class="m-0 text-[.82rem] leading-[1.5] text-[var(--text-muted)]">{{ t('يومياً من ٧ صباحًا حتى منتصف الليل', 'Daily from 7 AM to midnight') }}</p>
                 </div>
               </div>
-              <div class="loc-detail">
-                <span class="loc-icon"><AppIcon name="truck" :size="20" color="var(--primary)" aria-hidden="true" /></span>
+              <div class="loc-detail flex items-start gap-3">
+                <span class="loc-icon mt-0.5 shrink-0 text-[1.3rem]"><AppIcon name="truck" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
-                  <strong>{{ t('التوصيل', 'Delivery') }}</strong>
-                  <p>{{ t('يومياً ٧ ص – ١٠ م عبر خط ١٦٠١١', 'Daily 7 AM – 10 PM via hotline 16011') }}</p>
+                  <strong class="mb-0.5 block text-[.85rem] font-bold text-[var(--text)]">{{ t('التوصيل', 'Delivery') }}</strong>
+                  <p class="m-0 text-[.82rem] leading-[1.5] text-[var(--text-muted)]">{{ t('يومياً ٧ ص – ١٠ م عبر خط ١٦٠١١', 'Daily 7 AM – 10 PM via hotline 16011') }}</p>
                 </div>
               </div>
-              <div class="loc-detail">
-                <span class="loc-icon"><AppIcon name="globe" :size="20" color="var(--primary)" aria-hidden="true" /></span>
+              <div class="loc-detail flex items-start gap-3">
+                <span class="loc-icon mt-0.5 shrink-0 text-[1.3rem]"><AppIcon name="globe" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
-                  <strong>{{ t('فروعنا', 'Our Branches') }}</strong>
-                  <p>{{ t('مصر • الإمارات • المملكة العربية السعودية', 'Egypt • UAE • Saudi Arabia') }}</p>
+                  <strong class="mb-0.5 block text-[.85rem] font-bold text-[var(--text)]">{{ t('فروعنا', 'Our Branches') }}</strong>
+                  <p class="m-0 text-[.82rem] leading-[1.5] text-[var(--text-muted)]">{{ t('مصر • الإمارات • المملكة العربية السعودية', 'Egypt • UAE • Saudi Arabia') }}</p>
                 </div>
               </div>
             </div>
@@ -76,8 +76,8 @@
 
           <!-- Contact form -->
           <div class="contact-form-wrap">
-            <h2>{{ t('أرسل لنا رسالة', 'Send Us a Message') }}</h2>
-            <form class="contact-form" @submit.prevent="submitForm">
+            <h2 class="mb-5 text-[1.2rem] font-black text-[var(--text)]">{{ t('أرسل لنا رسالة', 'Send Us a Message') }}</h2>
+            <form class="contact-form flex flex-col gap-4" @submit.prevent="submitForm">
               <div class="form-field">
                 <label class="form-label">{{ t('الاسم', 'Name') }}</label>
                 <input v-model="form.name" class="form-input" type="text" :placeholder="t('اسمك الكريم', 'Your name')" required />
@@ -92,7 +92,7 @@
               </div>
               <div class="form-field">
                 <label class="form-label">{{ t('الرسالة', 'Message') }}</label>
-                <textarea v-model="form.message" class="form-input form-textarea" :placeholder="t('اكتب رسالتك هنا…', 'Write your message here…')" rows="4" required></textarea>
+                <textarea v-model="form.message" class="form-input form-textarea min-h-[110px] resize-y" :placeholder="t('اكتب رسالتك هنا…', 'Write your message here…')" rows="4" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary btn-full" :disabled="submitted">
                 <span v-if="!submitted">{{ t('إرسال الرسالة', 'Send Message') }}</span>
@@ -106,13 +106,13 @@
         </div>
 
         <!-- Social row -->
-        <div class="social-row">
-          <h3>{{ t('تابعنا على', 'Follow Us On') }}</h3>
-          <div class="social-links">
-            <a href="https://www.instagram.com/koshariabotarek" target="_blank" rel="noopener" class="social-link">Instagram</a>
-            <a href="https://www.facebook.com/kosharyabotarek" target="_blank" rel="noopener" class="social-link">Facebook</a>
-            <a href="https://www.tiktok.com/@koshariaboutarek" target="_blank" rel="noopener" class="social-link">TikTok</a>
-            <a href="https://www.youtube.com/@koshari_apo_tareq" target="_blank" rel="noopener" class="social-link">YouTube</a>
+        <div class="social-row border-t border-[var(--border)] pt-6 text-center">
+          <h3 class="mb-4 text-[1rem] font-bold text-[var(--text)]">{{ t('تابعنا على', 'Follow Us On') }}</h3>
+          <div class="social-links flex flex-wrap justify-center gap-3">
+            <a href="https://www.instagram.com/koshariabotarek" target="_blank" rel="noopener" class="social-link rounded-xl border-[1.5px] border-[var(--border)] bg-[var(--surface)] px-6 py-2.5 text-[.88rem] font-semibold text-[var(--text)] no-underline transition duration-150 hover:border-primary hover:bg-primary-light hover:text-primary">Instagram</a>
+            <a href="https://www.facebook.com/kosharyabotarek" target="_blank" rel="noopener" class="social-link rounded-xl border-[1.5px] border-[var(--border)] bg-[var(--surface)] px-6 py-2.5 text-[.88rem] font-semibold text-[var(--text)] no-underline transition duration-150 hover:border-primary hover:bg-primary-light hover:text-primary">Facebook</a>
+            <a href="https://www.tiktok.com/@koshariaboutarek" target="_blank" rel="noopener" class="social-link rounded-xl border-[1.5px] border-[var(--border)] bg-[var(--surface)] px-6 py-2.5 text-[.88rem] font-semibold text-[var(--text)] no-underline transition duration-150 hover:border-primary hover:bg-primary-light hover:text-primary">TikTok</a>
+            <a href="https://www.youtube.com/@koshari_apo_tareq" target="_blank" rel="noopener" class="social-link rounded-xl border-[1.5px] border-[var(--border)] bg-[var(--surface)] px-6 py-2.5 text-[.88rem] font-semibold text-[var(--text)] no-underline transition duration-150 hover:border-primary hover:bg-primary-light hover:text-primary">YouTube</a>
           </div>
         </div>
 
