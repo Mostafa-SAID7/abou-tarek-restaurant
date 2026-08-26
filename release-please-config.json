@@ -1,0 +1,8 @@
+{
+  "release-type": "node",
+  "changelog-path": "docs/CHANGELOG.md",
+  "include-component-in-tag": false,
+  "packages": {
+    ".": {}
+  }
+}

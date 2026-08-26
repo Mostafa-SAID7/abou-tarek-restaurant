@@ -233,6 +233,21 @@ export const languageService = {
   }
 }
 
+export const storageService = {
+  get(key, fallback) {
+    try {
+      const data = localStorage.getItem(key)
+      return data ? JSON.parse(data) : fallback
+    } catch (error) {
+      return fallback
+    }
+  },
+
+  set(key, value) {
+    localStorage.setItem(key, JSON.stringify(value))
+  }
+}
+
 export default {
   branchService,
   menuService,
@@ -240,5 +255,6 @@ export default {
   favoritesService,
   themeService,
   languageService,
+  storageService,
   STORAGE_KEYS
 }
