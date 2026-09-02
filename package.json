@@ -22,7 +22,7 @@
     "src/**/*.{js,vue,json,css}": "prettier --write"
   },
   "dependencies": {
-    "axios": "^1.6.8",
+    "axios": "^1.20.0",
     "pinia": "^4.0.3",
     "vue": "^3.4.31",
     "vue-router": "^5.2.0"
